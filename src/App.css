@@ -1,0 +1,423 @@
+/**
+|--------------------------------------------------
+|                     GLOBAL
+|--------------------------------------------------
+*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: unset;
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: "IBM Plex Mono", monospace;
+  background: rgb(255, 239, 246);
+  background: radial-gradient(
+    circle,
+    rgba(255, 239, 246, 1) 0%,
+    rgba(148, 187, 233, 1) 25%,
+    rgba(255, 239, 246, 1) 50%,
+    rgba(148, 187, 233, 1) 75%,
+    rgba(255, 239, 246, 1) 100%
+  );
+}
+
+/**
+|--------------------------------------------------
+|                     NAVBAR
+|--------------------------------------------------
+*/
+
+.navbar {
+  background-color: black;
+  color: white;
+  height: 75px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar ul li {
+  margin: 5px;
+  font-weight: bolder;
+  padding: 20px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.navbar ul li:hover {
+  color: #000000;
+  background-color: #fff;
+}
+
+/**
+|--------------------------------------------------
+|                  FORM & SIDE-BAR
+|--------------------------------------------------
+*/
+
+form {
+  background-color: rgb(0, 0, 0);
+  color: white;
+  padding: 13px;
+  padding-right: 0;
+  position: fixed;
+  top: 0px;
+  right: 0;
+  text-align: right;
+  width: 100%;
+}
+
+.search-bar,
+.search-button {
+  font-size: 20px;
+}
+.search-bar {
+  background-color: rgb(243, 243, 243);
+  box-shadow: 0 0 1px black;
+  padding: 10px;
+  width: 100px;
+  margin-right: 10px;
+  border-radius: 10px;
+  transition: 0.5s ease-in-out 1.5s;
+}
+
+.search-bar:focus {
+  width: 25vmax;
+}
+
+.search-button {
+  color: white;
+  background-color: red;
+  padding: 10px;
+  margin-right: 15px;
+  border: none;
+  transition: 0.1s ease-in-out;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  background-color: rgb(180, 23, 23);
+}
+.search-button:active {
+  transform: scale(0.95);
+}
+
+/* SIDE-BAR */
+
+#root > div > form > ul {
+  list-style: none;
+  font-size: 30px;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  /* change this onClick of hamburger */
+  display: none;
+  background-color: black;
+}
+#root > div > form > ul > li {
+  display: grid;
+  place-items: center;
+  font-weight: bolder;
+  cursor: pointer;
+  padding: 30px 0px;
+  transition: 0.5s ease-in-out;
+}
+
+#root > div > form > ul li:hover {
+  color: rgb(169, 169, 170);
+  text-decoration: underline;
+}
+
+/**
+|--------------------------------------------------
+|                     MAIN TAG
+|--------------------------------------------------
+*/
+
+main {
+  margin: 0px 15px;
+  padding: 5px 10px;
+}
+
+main:nth-child(3) {
+  margin-top: 13vh;
+}
+
+/**
+|--------------------------------------------------
+|               RECIPE CONTAINER
+|--------------------------------------------------
+*/
+
+.recipe-container {
+  margin-top: 20px;
+  text-align: center;
+  display: inline-block;
+  background: rgb(255, 255, 255);
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 1) 0%,
+    rgb(195, 215, 238) 100%
+  );
+  box-shadow: 0 0 5px black;
+}
+
+/**
+|--------------------------------------------------
+|                     RECIPE-TITLE
+|--------------------------------------------------
+*/
+
+.recipe-title {
+  font-weight: bolder;
+  display: inline-block;
+  padding: 10px;
+  text-shadow: 0 0 1px #000000;
+}
+
+/**
+|--------------------------------------------------
+|                    RECIPE-IMAGE
+|--------------------------------------------------
+*/
+
+.recipe-image {
+  width: 70%;
+  height: 70%;
+  border-radius: 50%;
+  box-shadow: 0 0 25px #000000;
+  background-position: center center;
+  background-size: cover;
+}
+
+/**
+|--------------------------------------------------
+|                    RECIPE-ITEM
+|--------------------------------------------------
+*/
+
+.recipe-item {
+  text-align: center;
+}
+
+main > div > ol {
+  display: list-item;
+  padding: 0;
+  padding: 15px;
+  list-style: none;
+}
+
+main > div > ol > li {
+  list-style: none;
+  font-size: 16px;
+}
+
+/**
+|--------------------------------------------------
+|                 RECIPE-CALORIES                    
+|--------------------------------------------------
+*/
+.recipe-calories {
+  text-decoration: underline;
+  font-weight: bolder;
+  font-size: 10px;
+  padding: 10px;
+}
+article > form > ul {
+  display: none;
+}
+
+#root > div > article > main:nth-child(2) > div {
+  margin-top: 15vh;
+}
+
+#root > div > article > main:nth-child(3) > div,
+#root > div > article > main:nth-child(3) {
+  margin-top: 10px;
+}
+
+/**
+|--------------------------------------------------
+|    @media screen and (min-width: 550px)
+|--------------------------------------------------
+*/
+@media screen and (min-width: 550px) {
+  /* MAIN */
+  main {
+    margin: 0px auto;
+    padding: 5px 10px;
+    max-width: 450px;
+  }
+
+  /* RECIPE-CONTAINER */
+  .recipe-container {
+  }
+
+  /* RECIPE-TITLE */
+
+  .recipe-title {
+    display: inline-block;
+  }
+
+  /* RECIPE-IMAGE */
+
+  .recipe-image {
+    width: 300px;
+    height: 300px;
+  }
+
+  /* RECIPE-ITEM */
+
+  .recipe-item {
+  }
+
+  main > div > ol {
+  }
+
+  main > div > ol > li {
+  }
+
+  /* RECIPE-CALORIES */
+  .recipe-calories {
+  }
+}
+
+/**
+|--------------------------------------------------
+|    @media screen and (min-width: 760px)
+|--------------------------------------------------
+*/
+@media screen and (min-width: 760px) {
+  /* FORM */
+  form {
+    width: 50%;
+    padding-top: 15px;
+  }
+
+  .search-bar,
+  .search-button {
+    font-size: 18px;
+  }
+  .search-bar {
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  .search-bar:focus {
+    width: 20vmax;
+  }
+
+  .search-button {
+    padding: 10px;
+  }
+
+  /* MAIN */
+  main {
+    margin: 0px auto;
+    padding: 5px 10px;
+  }
+
+  /* RECIPE-CONTAINER */
+  .recipe-container {
+    min-height: 850px;
+  }
+
+  /* RECIPE-TITLE */
+  .recipe-title {
+    margin: 25px;
+    font-size: 18px;
+  }
+
+  /* RECIPE-IMAGE */
+
+  .recipe-image {
+    width: 220px;
+    height: 220px;
+    margin: 25px;
+  }
+
+  /* RECIPE-ITEM */
+
+  .recipe-item {
+  }
+
+  /* RECIPE-CALORIES */
+  .recipe-calories {
+  }
+  article {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  article > form > ul {
+    display: none;
+  }
+
+  #root > div > article > main:nth-child(2) > div {
+    margin-top: 12vh;
+  }
+
+  #root > div > article > main:nth-child(3) > div {
+    margin-top: 11vh;
+  }
+}
+
+/**
+|--------------------------------------------------
+|    @media screen and (min-width: 950px)
+|--------------------------------------------------
+*/
+@media screen and (min-width: 900px) {
+  article {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  #root > div > article > main > div > ol > li:nth-child() {
+    display: list-item;
+    list-style: none;
+  }
+
+  .recipe-container {
+    width: 400px;
+  }
+}
+
+/**
+|--------------------------------------------------
+|    @media screen and (min-width: 1000px)
+|--------------------------------------------------
+*/
+@media screen and (min-width: 1000px) {
+  main {
+    display: flex;
+  }
+  .recipe-container {
+    width: 550px;
+  }
+}
+
+/**
+|--------------------------------------------------
+|    @media screen and (min-width: 1100px)
+|--------------------------------------------------
+*/
+@media screen and (min-width: 1100px) {
+  .recipe-container {
+    min-width: 450px;
+    margin: 10px auto;
+  }
+}
